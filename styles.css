@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+
+html {
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.view {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: color 15000ms ease infinite;
+}
+
+.left {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 6vw;
+}
+
+.shadow-div {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  right: 0;
+  box-shadow: -3px 0 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.right {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: white url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116884/otis-redding.png');
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  mix-blend-mode: screen;
+}
+
+.cd {
+  position: absolute;
+  top: 25%;
+  font-size: 6vw;
+}
+
+.img-container{
+  height: 40%;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 15%;
+  z-index: 3;
+  
+}
+.comp {
+  width: 50vw;
+}
+
+@keyframes color {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 90% 50%;
+  }
+  100% {
+    background-position: 10% 50%;
+  }
+}
+
