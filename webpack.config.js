@@ -5,12 +5,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
         test: /\.js?$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: ['env', 'stage-0', 'react']
