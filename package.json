@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "watch": "webpack -wd"
   },
   "repository": {
@@ -38,5 +38,9 @@
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1"
+  },
+  "engines": {
+    "node": "9.8.0",
+    "npm": "5.6.0"
   }
 }
