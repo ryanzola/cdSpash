@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   entry: {
     vendors: ['react', 'react-dom'],
@@ -50,6 +51,9 @@ module.exports = {
     ]
   },
   optimization: {
+    minimizer: [
+      new UglifyJsPlugin()
+    ],
     splitChunks: {
       cacheGroups: {
         commons: { test: /[\\/]node_modules[\\/]/, name: "vendors", chunks: "all" }
