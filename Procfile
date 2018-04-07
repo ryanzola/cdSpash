@@ -1,1 +1,1 @@
-web: webpack-dev-server
+web: babel-node server.js
