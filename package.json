@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "postinstall": "webpack -p",
-    "start": "babel-node server.js",
+    "start": "webpack -p --progress && babel-node server.js",
     "watch": "webpack -wd"
   },
   "repository": {
@@ -23,6 +22,7 @@
     "babel-core": "^6.21.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "file-loader": "^1.1.11",

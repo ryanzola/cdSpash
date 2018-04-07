@@ -10,6 +10,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 })
 
-app.listen(app.get('port'))
+app.listen(app.get('port'), () =>{
+  console.info(`Listening at http://localhost:${app.get('port')}`);
+})
 
 module.exports = app;
