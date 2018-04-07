@@ -1,8 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index'),
+  entry: {
+    vendors: ['react', 'react-dom'],
+    app: path.join(__dirname, 'src', 'index')
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   mode: 'production',
@@ -44,6 +48,13 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: { test: /[\\/]node_modules[\\/]/, name: "vendors", chunks: "all" }
+      }
+    }
   },
   resolve: {
     extensions: ['.json', '.js', '.jsx', '.css']
