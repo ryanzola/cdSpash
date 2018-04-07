@@ -1,5 +1,4 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: path.join(__dirname, 'src', 'index'),
   output: {
@@ -37,14 +36,15 @@ module.exports = {
         use: [
           {loader: 'url-loader'}
         ]
+      },
+      {
+        test: /\.jpg?$/,
+        use: [
+          {loader: 'url-loader'}
+        ]
       }
     ]
   },
-  plugins: [
-    new CopyWebpackPlugin([
-      {from: './dist/index.html'}
-    ])
-  ],
   resolve: {
     extensions: ['.json', '.js', '.jsx', '.css']
   },
