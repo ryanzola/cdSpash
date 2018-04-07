@@ -1,5 +1,5 @@
 # cdSpash
-pure CSS animated chartDoc website splash screen
+Built using Express, Babel, React, SCSS, and Webpack.
 
-view this repo at:
-https://ryanzola.github.io/cdSplash/
+This repo is deployed using heroku:
+https://rz-cdsplash.herokuapp.com/
