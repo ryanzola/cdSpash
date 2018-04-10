@@ -16,11 +16,11 @@ class App extends Component {
         </div>
         <div className="shadow-div"></div>
         <div className="img-container">
-            <div className="comp"></div>
+          <div className="comp"></div>
         </div>
       </div>
     );
   }
 }
 
-render(<App />, document.getElementById('react-container'))
+render(<App />, document.getElementById('react-container'));

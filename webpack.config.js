@@ -1,6 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
   entry: {
     vendors: ['react', 'react-dom'],
@@ -16,10 +15,14 @@ module.exports = {
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['env', 'stage-0', 'react']
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env', 'stage-0', 'react']
+            }
+          },
+        ],
       },
       {
         test: /\.css?$/,
@@ -45,12 +48,9 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [
-      new UglifyJsPlugin()
-    ],
     splitChunks: {
       cacheGroups: {
-        commons: { test: /[\\/]node_modules[\\/]/, name: "vendors", chunks: "all" }
+        commons: { test: /[\\/]node_modules[\\/]/, name: 'vendors', chunks: 'all' }
       }
     }
   },
@@ -59,7 +59,7 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     port: 5000
   }
 };

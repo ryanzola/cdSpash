@@ -6,10 +6,11 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
     ecmaFeatures: {
-      experimentalObjectRestSpread: true
+      experimentalObjectRestSpread: true,
+      jsx: true
     },
     sourceType: 'module'
   },
@@ -17,7 +18,7 @@ module.exports = {
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    //quotes: ['error', 'backtick', 'single'],
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
     semi: ['error', 'always'],
     'no-console': ['warn', { allow: ['info', 'error'] }]
   }
